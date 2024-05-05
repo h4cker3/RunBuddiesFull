@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "702593422859",
+    "firebase_url": "https://runbuddies-92321-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "runbuddies-92321",
+    "storage_bucket": "runbuddies-92321.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702593422859:android:c65ec73579a1a09c2b190e",
+        "android_client_info": {
+          "package_name": "ru.mark1z11.runbuddies"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzJLLf7tibc0J1HADJhbqA5esOqHAQ_mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

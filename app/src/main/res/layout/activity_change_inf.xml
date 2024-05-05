@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangeInfActivity"
+    android:background="@color/white">
+
+
+    <Button
+        android:id="@+id/button_goback"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/name_lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/icon_pencil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/pencil_inf" />
+
+        <EditText
+            android:id="@+id/namepe_te"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:hint="Name" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/age_lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/name_lin">
+
+        <ImageView
+            android:id="@+id/icon_age"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/ageimg" />
+
+        <EditText
+            android:id="@+id/age_te"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:hint="Age" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/gender_lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/age_lin">
+
+        <ImageView
+            android:id="@+id/icon_gender"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/genderimg" />
+
+        <EditText
+            android:id="@+id/gender_te"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:hint="Gender" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/weight_lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gender_lin">
+
+        <ImageView
+            android:id="@+id/icon_weight"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/weightimg" />
+
+        <EditText
+            android:id="@+id/weight_te"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:hint="Weight" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/height_lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/weight_lin">
+
+        <ImageView
+            android:id="@+id/icon_height"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/heightimg" />
+
+        <EditText
+            android:id="@+id/height_te"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:hint="Height" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/speed_lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/height_lin"
+        app:layout_constraintBottom_toBottomOf="@id/applye_btn"
+        android:layout_marginStart="40dp">
+
+        <ImageView
+            android:id="@+id/icon_speed"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/speed" />
+
+        <SeekBar
+            android:id="@+id/speedbar"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:min="1"
+            android:max="50"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/distance_lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/height_lin"
+        app:layout_constraintBottom_toBottomOf="@id/applye_btn"
+        android:layout_marginStart="40dp">
+
+        <ImageView
+            android:id="@+id/icon_distance"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/distance" />
+
+        <SeekBar
+            android:id="@+id/distancebar"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:min="500"
+            android:max="5000"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/speedtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 km"
+        app:layout_constraintBottom_toTopOf="@+id/applye_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speed_lin"
+        android:layout_marginStart="100dp"/>
+
+    <TextView
+        android:id="@+id/distancetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="500 m"
+        app:layout_constraintBottom_toTopOf="@+id/applye_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speed_lin"
+        android:layout_marginEnd="70dp"/>
+
+    <Button
+        android:id="@+id/applye_btn"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:text="Apply"
+        android:layout_marginTop="110dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height_lin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
