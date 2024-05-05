@@ -1,5 +1,6 @@
 # RunBuddies
 Презентация: https://docs.google.com/presentation/d/18P1h_hOFk5gY4uxab-hGleITGxtikNC3k0QPixqWNl0/edit?usp=sharing
+
 APK-BUILD: https://disk.yandex.ru/d/SHb_YKOF59BOAw
 ### Полезные ссылки
 1.  https://ru.stackoverflow.com/questions/558389/Подсчет-шагов-android
