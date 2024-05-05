@@ -50,7 +50,7 @@ public class Rastsolo extends AppCompatActivity implements SensorEventListener {
 
 
         mySteps = (TextView) findViewById(R.id.rast_title);
-        sm = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        sm = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         countSensor = sm.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         AccelSensor = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mAccel = 0.00f;
@@ -61,14 +61,13 @@ public class Rastsolo extends AppCompatActivity implements SensorEventListener {
     @Override
     protected void onResume() {
         super.onResume();
-        sm.registerListener(this,AccelSensor,SensorManager.SENSOR_DELAY_NORMAL);
-        if(countSensor != null){
+        sm.registerListener(this, AccelSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        if (countSensor != null) {
             running = true;
-            sm.registerListener(this,countSensor,SensorManager.SENSOR_DELAY_UI);
-            Toast.makeText(this,"Sensor Found",Toast.LENGTH_LONG).show();
-        }
-        else {
-            Toast.makeText(this,"Sensor Not available",Toast.LENGTH_LONG).show();
+            sm.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
+            Toast.makeText(this, "Sensor Found", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Sensor Not available", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -76,7 +75,7 @@ public class Rastsolo extends AppCompatActivity implements SensorEventListener {
     protected void onPause() {
         super.onPause();
         running = false;
-        sm.unregisterListener(this,AccelSensor);
+        sm.unregisterListener(this, AccelSensor);
     }
 
     @Override
@@ -95,14 +94,13 @@ public class Rastsolo extends AppCompatActivity implements SensorEventListener {
                 mySteps.setText("0");
                 shake = true;
             }
-        }
-        else if(event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) {
-            if(shake){
+        } else if (event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) {
+            if (shake) {
                 shake = false;
-                system_steps = (int)event.values[0];
+                system_steps = (int) event.values[0];
             }
             if (running) {
-                mySteps.setText(String.valueOf((int)event.values[0]-system_steps));
+                mySteps.setText(String.valueOf((int) event.values[0] - system_steps));
             }
         }
 

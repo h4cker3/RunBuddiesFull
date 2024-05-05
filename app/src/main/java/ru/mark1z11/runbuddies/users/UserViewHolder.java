@@ -16,6 +16,7 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
     CircleImageView profileImage;
     TextView username_tv;
     TextView rate;
+
     public UserViewHolder(@NonNull View itemView) {
         super(itemView);
 

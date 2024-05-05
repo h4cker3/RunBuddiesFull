@@ -33,25 +33,23 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding =  ActivityRegisterBinding.inflate(getLayoutInflater());
+        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.backBtn.setText("<-");
-
-
 
 
         binding.regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (binding.emailTe.getText().toString().isEmpty() || binding.pswrdTe.getText().toString().isEmpty()
-                || binding.usernameTe.getText().toString().isEmpty()){
+                        || binding.usernameTe.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Fields cannot be empty", Toast.LENGTH_SHORT).show();
-                }else{
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.emailTe.getText().toString(),binding.pswrdTe.getText().toString())
+                } else {
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.emailTe.getText().toString(), binding.pswrdTe.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()){
+                                    if (task.isSuccessful()) {
                                         HashMap<String, String> userInfo = new HashMap<>();
                                         userInfo.put("email", binding.emailTe.getText().toString());
                                         userInfo.put("name", binding.usernameTe.getText().toString());

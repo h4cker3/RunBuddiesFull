@@ -34,14 +34,14 @@ public class LoginActivity extends AppCompatActivity {
         binding.logginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (binding.emailTe.getText().toString().isEmpty() || binding.pswrdTe.getText().toString().isEmpty()){
+                if (binding.emailTe.getText().toString().isEmpty() || binding.pswrdTe.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Fields cannot be empty", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.emailTe.getText().toString(), binding.pswrdTe.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()){
+                                    if (task.isSuccessful()) {
                                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                     }
                                 }

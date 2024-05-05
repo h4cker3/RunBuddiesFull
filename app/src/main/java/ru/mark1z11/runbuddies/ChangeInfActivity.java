@@ -43,14 +43,12 @@ public class ChangeInfActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-
-
-
         binding.buttonGoback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ChangeInfActivity.this, MainActivity.class));
-            }});
+            }
+        });
         loadUserInfo1();
 
         SeekBar seekBar = findViewById(R.id.speedbar);
@@ -96,12 +94,13 @@ public class ChangeInfActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (binding.namepeTe.getText().toString().isEmpty() || binding.ageTe.getText().toString().isEmpty()
                         || binding.genderTe.getText().toString().isEmpty() || binding.weightTe.getText().toString().isEmpty()
-                        || binding.heightTe.getText().toString().isEmpty()){
+                        || binding.heightTe.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Fields cannot be empty", Toast.LENGTH_SHORT).show();
-                } if(binding.ageTe.getText().toString().matches("^\\d+$") == false || binding.weightTe.getText().toString().matches("^\\d+$") == false
-                || binding.heightTe.getText().toString().matches("^\\d+$") == false){
+                }
+                if (binding.ageTe.getText().toString().matches("^\\d+$") == false || binding.weightTe.getText().toString().matches("^\\d+$") == false
+                        || binding.heightTe.getText().toString().matches("^\\d+$") == false) {
                     Toast.makeText(getApplicationContext(), "The numbers you need", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("name").setValue(binding.namepeTe.getText().toString());
                     FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("age").setValue(binding.ageTe.getText().toString());
@@ -123,7 +122,7 @@ public class ChangeInfActivity extends AppCompatActivity {
         });
     }
 
-    private void loadUserInfo1(){
+    private void loadUserInfo1() {
         FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -152,5 +151,5 @@ public class ChangeInfActivity extends AppCompatActivity {
 
                     }
                 });
-}
+    }
 }

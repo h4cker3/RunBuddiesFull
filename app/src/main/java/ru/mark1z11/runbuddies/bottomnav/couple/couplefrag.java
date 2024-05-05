@@ -31,9 +31,8 @@ import ru.mark1z11.runbuddies.databinding.FragCoupleBinding;
 import ru.mark1z11.runbuddies.users.User;
 import ru.mark1z11.runbuddies.users.UserAdapter;
 
-public class couplefrag extends Fragment{
+public class couplefrag extends Fragment {
     FragCoupleBinding binding;
-
 
 
     @Nullable
@@ -46,13 +45,13 @@ public class couplefrag extends Fragment{
     }
 
 
-    private void  loadUsers(){
+    private void loadUsers() {
         ArrayList<User> users = new ArrayList<User>();
         FirebaseDatabase.getInstance().getReference().child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot userSnapshot : snapshot.getChildren()){
-                    if (userSnapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                for (DataSnapshot userSnapshot : snapshot.getChildren()) {
+                    if (userSnapshot.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
                         continue;
                     }
 

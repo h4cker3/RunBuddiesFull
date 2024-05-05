@@ -28,7 +28,7 @@ import ru.mark1z11.runbuddies.bottomnav.events.eventsfrag;
 import ru.mark1z11.runbuddies.bottomnav.profile.profilefrag;
 import ru.mark1z11.runbuddies.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity{
         fragmentMap.put(R.id.profile, new profilefrag());
 
 
-        binding.btmNav.setOnItemSelectedListener(item ->{
+        binding.btmNav.setOnItemSelectedListener(item -> {
             Fragment fragment = fragmentMap.get(item.getItemId());
             getSupportFragmentManager().beginTransaction().replace(binding.btmCont.getId(), fragment).commit();
             return true;

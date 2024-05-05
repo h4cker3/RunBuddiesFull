@@ -18,10 +18,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     private ArrayList<User> users = new ArrayList<>();
 
 
-    public UserAdapter(ArrayList<User> users){
+    public UserAdapter(ArrayList<User> users) {
         this.users = users;
     }
-
 
 
     @NonNull
@@ -37,7 +36,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
         holder.rate.setText(users.get(position).rate);
 
 
-        if (!users.get(position).profileImage.isEmpty()){
+        if (!users.get(position).profileImage.isEmpty()) {
             Glide.with(holder.itemView.getContext()).load(users.get(position).profileImage).into(holder.profileImage);
         }
     }

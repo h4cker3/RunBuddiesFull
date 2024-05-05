@@ -16,7 +16,7 @@ import ru.mark1z11.runbuddies.databinding.FragEventsBinding;
 import ru.mark1z11.runbuddies.events.Event;
 import ru.mark1z11.runbuddies.events.EventsAdapter;
 
-public class eventsfrag extends Fragment{
+public class eventsfrag extends Fragment {
     private FragEventsBinding binding;
 
     @Nullable
@@ -28,7 +28,7 @@ public class eventsfrag extends Fragment{
         return binding.getRoot();
     }
 
-    private void loadEvents(){
+    private void loadEvents() {
         ArrayList<Event> events = new ArrayList<Event>();
         binding.eventRv.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.eventRv.setAdapter(new EventsAdapter(events));

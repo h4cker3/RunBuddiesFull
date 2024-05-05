@@ -22,9 +22,11 @@ import ru.mark1z11.runbuddies.R;
 public class EventsAdapter extends RecyclerView.Adapter<EventViewHolder> {
 
     private ArrayList<Event> events;
-    public EventsAdapter(ArrayList<Event> events){
+
+    public EventsAdapter(ArrayList<Event> events) {
         this.events = events;
     }
+
     @NonNull
     @Override
     public EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,9 +39,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventViewHolder> {
         holder.chat_name_tv.setText(events.get(position).getEvent_name());
 
 
-
-
     }
+
     @Override
     public int getItemCount() {
         return events.size();

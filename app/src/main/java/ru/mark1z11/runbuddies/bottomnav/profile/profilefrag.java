@@ -45,7 +45,6 @@ public class profilefrag extends Fragment {
     private Uri filePath;
 
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -88,13 +87,13 @@ public class profilefrag extends Fragment {
     ActivityResultLauncher<Intent> pickImageActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
-            if(result.getResultCode()== Activity.RESULT_OK && result.getData()!=null && result.getData().getData()!=null){
+            if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null && result.getData().getData() != null) {
                 filePath = result.getData().getData();
 
-                try{
+                try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), filePath);
                     binding.profileimgCircle.setImageBitmap(bitmap);
-                }catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
 
@@ -104,7 +103,7 @@ public class profilefrag extends Fragment {
     });
 
 
-    private void loadUserInfo(){
+    private void loadUserInfo() {
         FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -118,12 +117,12 @@ public class profilefrag extends Fragment {
                         String rate = snapshot.child("rating").getValue().toString();
                         binding.rateTe.setText(rate);
                         binding.usernameTv.setText(username);
-                        binding.ageInf.setText("Age: "+age);
-                        binding.genderInf.setText("Gender: "+gender);
-                        binding.weightInf.setText("Weight: "+weight);
-                        binding.heightInf.setText("Height: "+height);
+                        binding.ageInf.setText("Age: " + age);
+                        binding.genderInf.setText("Gender: " + gender);
+                        binding.weightInf.setText("Weight: " + weight);
+                        binding.heightInf.setText("Height: " + height);
 
-                        if(!profileImage.isEmpty()){
+                        if (!profileImage.isEmpty()) {
                             Glide.with(getContext()).load(profileImage).into(binding.profileimgCircle);
                         }
                     }
@@ -136,7 +135,7 @@ public class profilefrag extends Fragment {
 
     }
 
-    private void selectImage(){
+    private void selectImage() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(intent.ACTION_GET_CONTENT);
@@ -144,16 +143,16 @@ public class profilefrag extends Fragment {
     }
 
 
-    private void uploadImage(){
-        if (filePath!=null){
+    private void uploadImage() {
+        if (filePath != null) {
             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            FirebaseStorage.getInstance().getReference().child("images/"+uid).putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            FirebaseStorage.getInstance().getReference().child("images/" + uid).putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Toast.makeText(getContext(), "Done!", Toast.LENGTH_SHORT).show();
 
 
-                    FirebaseStorage.getInstance().getReference().child("images/"+uid).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    FirebaseStorage.getInstance().getReference().child("images/" + uid).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
                             FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("profileImage").setValue(uri.toString());
