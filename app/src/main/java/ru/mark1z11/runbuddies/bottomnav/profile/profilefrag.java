@@ -50,6 +50,7 @@ public class profilefrag extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragProfileBinding.inflate(inflater, container, false);
+
         binding.buttonStepsInf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -8,6 +8,16 @@
     tools:context=".Rastsolo"
     android:background="@color/white">
 
+    <Button
+        android:id="@+id/button_gooback"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/rast_title"

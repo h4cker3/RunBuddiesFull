@@ -45,6 +45,7 @@ public class ChangeInfActivity extends AppCompatActivity {
 
 
 
+
         binding.buttonGoback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

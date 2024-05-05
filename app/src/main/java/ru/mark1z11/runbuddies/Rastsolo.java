@@ -1,12 +1,14 @@
 package ru.mark1z11.runbuddies;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +18,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import ru.mark1z11.runbuddies.databinding.ActivityLoginBinding;
+import ru.mark1z11.runbuddies.databinding.ActivityRastsoloBinding;
+
 public class Rastsolo extends AppCompatActivity implements SensorEventListener {
+    private ActivityRastsoloBinding binding;
     SensorManager sm;
     TextView mySteps;
     boolean running = false;
@@ -32,7 +38,17 @@ public class Rastsolo extends AppCompatActivity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rastsolo);
+        binding = ActivityRastsoloBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.buttonGooback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Rastsolo.this, MainActivity.class));
+            }
+        });
+
+
         mySteps = (TextView) findViewById(R.id.rast_title);
         sm = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         countSensor = sm.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);

@@ -35,6 +35,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding =  ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.backBtn.setText("<-");
+
 
 
 

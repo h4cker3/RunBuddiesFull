@@ -9,23 +9,24 @@
     android:background="@color/white">
 
 
-    <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
         android:id="@+id/back_btn"
-        android:src="@drawable/img3"
-        android:backgroundTint="@color/white"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="28dp"/>
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/orange"/>
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="235dp"
-        android:layout_height="235dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:layout_marginTop="40dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
